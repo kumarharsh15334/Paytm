@@ -5,6 +5,7 @@ const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        console.log("hiii")
         return res.status(403).json({});
     }
 
@@ -13,15 +14,11 @@ const authMiddleware = (req, res, next) => {
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
 
-        if(decoded.userId) {
-            req.userId = decoded.userId;
-            next();
-        }
-        else{
-            return res.status(403).json({});
-        }
-   
+        req.userId = decoded.userId;
+
+        next();
     } catch (err) {
+        console.log("hii2")
         return res.status(403).json({});
     }
 };
