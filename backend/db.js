@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://kharsh15334:ZjY11UyFv3fTFlR5@cluster0.jgh4j.mongodb.net/Paytm")
+require('dotenv').config();
+
+const MONGO_URL = process.env.MONGO_URL;
+
+mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('Database connected successfully');
+}).catch((error) => {
+    console.log('Error connecting to the database:', error);
+});
 
 // Create a Schema for Users
 const userSchema = new mongoose.Schema({
