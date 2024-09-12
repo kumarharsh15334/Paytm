@@ -65,7 +65,7 @@ export const Signin = () => {
                     />
                     <InputBox 
                         onChange={(e) => setPassword(e.target.value)} 
-                        placeholder="password" 
+                        placeholder="Password" 
                         label={"Password"} 
                         type="password" // Hide the password input
                     />
