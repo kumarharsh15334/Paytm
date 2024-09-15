@@ -7,7 +7,7 @@ export const Appbar = ({ firstName }) => {
     return (
         <div className="shadow h-14 flex justify-between">
             <div className="flex flex-col justify-center h-full ml-4">
-                PayTM App
+                <strong className="text-3xl font-bold tracking-wide font-sans">QuickSend</strong>
             </div>
             <div className="flex">
                 <div className="flex flex-col justify-center h-full mr-4">

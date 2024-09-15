@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'; // useNavigate replaces useHisto
 import { Appbar } from "../components/Appbar";
 import { Balance } from "../components/Balance";
 import { Users } from "../components/Users";
+import { Button } from '../components/Button';
 
 export const Dashboard = () => {
     const navigate = useNavigate(); // useNavigate hook
@@ -65,6 +66,12 @@ export const Dashboard = () => {
         }
     };
 
+    const handleLogout = () => {
+        // Handle logout logic here, e.g., clear token from localStorage and redirect to signin page
+        localStorage.removeItem('token');
+        navigate('/signin');
+    };
+
     if (!token) {
         // Render nothing or a loading indicator until token is checked
         return null;
@@ -77,6 +84,13 @@ export const Dashboard = () => {
             <div className="m-8">
                 <Balance value={balance} />
                 <Users />
+            </div>
+            <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2">
+                <Button
+                    onClick={handleLogout}
+                    label={"Log Out"}
+                    size="small"
+                />
             </div>
         </div>
     );
