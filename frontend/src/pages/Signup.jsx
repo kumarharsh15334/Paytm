@@ -24,16 +24,16 @@ export const Signup = () => {
                     <SubHeading label={"Enter your information to create an account"}></SubHeading>
                     <InputBox onChange={(e) => {
                         setFirstName(e.target.value);
-                    }} placeholder="John" label={"First name"}></InputBox>
+                    }} placeholder="First Name" label={"First name"}></InputBox>
                     <InputBox onChange={(e) => {
                         setLastName(e.target.value)
-                    }} placeholder="Doe" label={"Last name"}></InputBox>
+                    }} placeholder="Last Name" label={"Last name"}></InputBox>
                     <InputBox onChange={(e) => {
                         setUserName(e.target.value)
-                    }} placeholder="harsh@gmail.com" label={"Email"}></InputBox>
+                    }} placeholder="abc@gmail.com" label={"Email"}></InputBox>
                     <InputBox onChange={(e) => {
                         setPassword(e.target.value)
-                    }} placeholder="123456" label={"Password"}></InputBox>
+                    }} placeholder="min 6 letters" label={"Password"}></InputBox>
                     <div className="pt-4">
                         <Button onClick={async () => {
                             const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
