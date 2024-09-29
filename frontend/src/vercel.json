@@ -1,0 +1,16 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dsec": "/"
+        },
+        {
+            "src": "/user",
+            "dest": "/"
+        },
+        {
+            "src": "/account",
+            "dest": "/"
+        }
+    ]
+}
